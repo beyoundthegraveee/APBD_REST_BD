@@ -1,39 +1,38 @@
-W trakcie niniejszych ćwiczeń do wykonania jest prosta aplikacja REST API,
-która umożliwia wykonanie operacji pozwalających na modyfikowanie danych
-w bazie SQL Server.
-Razem z zadaniem załączony jest skrypt pozwalający na stworzenie tabelki
-Animals i wypełnienie jej danymi. Komunikacja z bazą danych powinna
-odbywać się poprzez klasy SqlConnection/SqlCommand.
-Dane serwera: db-mssql16.pjwstk.edu.pl
-1. Dodaj kontroler Animals
-2. Dodaj metodę/endpoint pozwalającą na uzyskanie listy zwierząt.
-Końcówka powinna reagować na żądanie typu HTTP GET wysłane na
-adres /api/animals
-1. Końcówka powinna pozwolić na przyjęcie parametru w query string,
-który określa sortowanie. Parametr nazywa się orderBy. Przykład:
+During these exercises, you will be asked to perform a simple REST API application,
+which allows you to perform operations that allow you to modify data
+in the SQL Server database.
+A script is included with the task, allowing you to create a table
+Animals and fill it with data. Communication with the database should
+be done via the SqlConnection/SqlCommand classes.
+
+Server data: db-mssql16.pjwstk.edu.pl
+1. Add the Animals controller
+2. Add a method/endpoint that allows you to get a list of animals.
+The terminal should respond to an HTTP GET request sent to
+the address /api/animals
+1. The terminal should allow you to accept a parameter in the query string,
+which specifies the sorting. The parameter is called orderBy. Example:
 api/animals?orderBy=name
-2. Parametr jako dostępne wartości przyjmuje: name, description,
-category, area. Możemy sortować wyłącznie po jednej kolumnie.
-Sortowanie jest zawsze w kierunku „ascending”.
-3. Domyślne sortowanie (kiedy w żądaniu nie zostanie przekazany
-parametr w query string) powinna odbywać się po kolumnie name.
-3. Dodaj metodę/endpoint pozwalający na dodanie nowego zwierzęcia.
-1. Metoda powinna odpowiadać na żądanie HTTP POST na adres
+2. The parameter accepts the following values ​​as available: name, description,
+category, area. We can only sort by one column.
+The sorting is always in the "ascending" direction. 3. The default sorting (when no parameter is passed in the query string) should be done by the name column.
+3. Add a method/endpoint allowing you to add a new animal.
+1. The method should respond to an HTTP POST request to the address
 api/animals
-2. Metoda powinna przyjmować dane w postaci JSON2
-4. Dodaj metodę/endpoint pozwalający na aktualizację danych konkretnego
-zwierzęcia.
-1. Metoda powinna odpowiadać na żądanie HTTP PUT wysłane na
-adres /api/animals/{idAnimal}
-2. Metoda przyjmuje dane w postaci JSON’a
-3. Zakładamy, że klucze główne nie ulegają modyfikacji (kolumna
+2. The method should accept data in the form of JSON2
+4. Add a method/endpoint allowing you to update the data of a specific
+animal.
+1. The method should respond to an HTTP PUT request sent to the
+address /api/animals/{idAnimal}
+2. The method accepts data in the form of JSON
+3. We assume that the primary keys are not modified (column
 IdAnimal)
-5. Dodaj metodę/endpoint do usuwania danych na temat konkretnego
-zwierzęcia.
-1. Metoda powinna odpowiadać na żądanie HTTP DELETE wysłane
-na adres /api/animals/{idAnimal}
-6. Pamiętaj o poprawnych kodach HTTP
-7. Postaraj się skorzystać z wbudowanego mechanizmu do
+5. Add a method/endpoint for deleting data about a specific
+animal.
+1. The method should respond to an HTTP DELETE request sent
+to /api/animals/{idAnimal}
+6. Remember about correct HTTP codes
+7. Try to use the built-in mechanism for
 DependencyInjection.
-8. Dbaj o walidację danych
-9. Dbaj o nazewnictwo i sty
+8. Take care of data validation
+9. Take care of naming and style
